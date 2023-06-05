@@ -1,0 +1,157 @@
+body {
+  background-color: rgba(243, 243, 243, 0.801);
+}
+.page {
+  margin: auto;
+}
+
+.game-container {
+  display: grid;
+  grid-template-columns: fit-content(25%) fit-content(25%);
+  justify-content: center;
+  gap: 1rem;
+}
+
+.game-container div {
+  border-radius: 15px;
+  width: 10rem;
+  height: 10rem;
+  animation-timing-function: ease;
+}
+
+#green {
+  background-color: rgb(0, 128, 0);
+}
+
+#green.active {
+  animation-name: illuminate-green;
+  animation-delay: 0s;
+  animation-duration: 1s;
+  animation-direction: alternate;
+}
+
+#red {
+  background-color: rgb(255, 0, 0);
+}
+
+#red.active {
+  animation-name: illuminate-red;
+  animation-delay: 0s;
+  animation-duration: 1s;
+  animation-direction: alternate;
+}
+
+#orange {
+  background-color: rgb(255, 165, 0);
+}
+
+#orange.active {
+  animation-name: illuminate-orange;
+  animation-delay: 0s;
+  animation-duration: 1s;
+  animation-direction: alternate;
+}
+
+#blue {
+  background-color: blue;
+}
+
+#blue.active {
+  animation-name: illuminate-blue;
+  animation-delay: 0s;
+  animation-duration: 1s;
+  animation-direction: alternate;
+}
+
+.game-button {
+  border: none;
+  border-radius: 50%;
+}
+
+@keyframes illuminate-blue {
+  0% {
+    background: radial-gradient(
+      circle at center,
+      rgba(0, 0, 255, 0.66),
+      rgba(0, 0, 255, 1)
+    );
+  }
+  50% {
+    background: radial-gradient(
+      circle at center,
+      rgba(0, 0, 255, 0.66),
+      rgba(0, 0, 255, 1)
+    );
+    box-shadow: 0 0 30px 10px rgba(0, 0, 255, 0.33);
+  }
+  100% {
+    background: blue;
+    box-shadow: none;
+  }
+}
+
+@keyframes illuminate-green {
+  0% {
+    background: radial-gradient(
+      circle at center,
+      rgba(0, 128, 0, 0.66),
+      rgba(0, 128, 0, 1)
+    );
+  }
+  50% {
+    background: radial-gradient(
+      circle at center,
+      rgba(0, 128, 0, 0.66),
+      rgba(0, 128, 0, 1)
+    );
+    box-shadow: 0 0 30px 10px rgba(0, 128, 0, 0.33);
+  }
+  100% {
+    background: green;
+    box-shadow: none;
+  }
+}
+
+@keyframes illuminate-red {
+  0% {
+    background: radial-gradient(
+      circle at center,
+      rgba(255, 0, 0, 0.66),
+      rgba(255, 0, 0, 1)
+    );
+  }
+  50% {
+    background: radial-gradient(
+      circle at center,
+      rgba(255, 0, 0, 0.66),
+      rgba(255, 0, 0, 1)
+    );
+    box-shadow: 0 0 30px 10px rgba(255, 0, 0, 0.33);
+  }
+  100% {
+    background: red;
+    box-shadow: none;
+  }
+}
+
+@keyframes illuminate-orange {
+  0% {
+    background: radial-gradient(
+      circle at center,
+      rgba(255, 165, 0, 0.66),
+      rgba(255, 165, 0, 1)
+    );
+  }
+  50% {
+    background: radial-gradient(
+      circle at center,
+      rgba(255, 165, 0, 0.66),
+      rgba(255, 165, 0, 1)
+    );
+    box-shadow: 0 0 30px 10px rgba(255, 165, 0, 0.33);
+  }
+  100% {
+    background: orange;
+    box-shadow: none;
+  }
+}
