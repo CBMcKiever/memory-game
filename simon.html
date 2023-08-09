@@ -5,7 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
-
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
     <title>Document</title>
   </head>
   <body>
@@ -16,8 +19,19 @@
         <div id="orange"></div>
         <div id="green"></div>
       </div>
-      <div class="game-stats"></div>
+      <div>
+        <button id="play">
+          <span class="material-symbols-outlined"> play_arrow </span>
+        </button>
+        <button><span class="material-symbols-outlined"> replay </span></button>
+      </div>
+      <div id="score">0</div>
     </div>
+
+    <audio src="./assets/B_FLAT_BLUE.mp3" id="blueTone"></audio>
+    <audio src="./assets/B_FLAT_GREEN.mp3" id="greenTone"></audio>
+    <audio src="./assets/C_SHARP_YELLOW.mp3" id="yellowTone"></audio>
+    <audio src="./assets/F_RED.mp3" id="redTone"></audio>
     <script src="simon.js"></script>
   </body>
 </html>

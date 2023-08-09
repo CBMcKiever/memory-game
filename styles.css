@@ -1,8 +1,12 @@
 body {
-  background-color: rgba(243, 243, 243, 0.801);
+  background-color: #faf9f6;
 }
 .page {
   margin: auto;
+}
+
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
 }
 
 .game-container {
