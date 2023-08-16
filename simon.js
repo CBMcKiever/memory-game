@@ -88,11 +88,13 @@ const illuminateElement = async (id) => {
 const showAnswers = async (answerArray) => {
   for (const answer of answerArray) {
     await delay(200);
+    playSound(answer);
     await illuminateElement(answer);
   }
 };
 
 async function gameLoop() {
+  document.getElementById("play").removeEventListener("click", gameLoop);
   let i = 0;
   mainLoop: while (true) {
     answers = pushNextAnswer(answers);
@@ -102,16 +104,14 @@ async function gameLoop() {
       const isSelectionCorrect = await waitForSelection(answer);
       if (isSelectionCorrect) {
         console.log("correct guess... next");
-        // console.log(++score);
-
         continue;
       } else {
         break mainLoop;
       }
     }
-    document.getElementById("score").innerHTML = ++score;
+    document.getElementById("game-score").innerHTML = ++score;
   }
-  console.log("Damn dude, game over.... Loser");
+  // document.addEventListener("click", gameLoop);
 }
 
-gameLoop();
+document.getElementById("play").addEventListener("click", gameLoop);

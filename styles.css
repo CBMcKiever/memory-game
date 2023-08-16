@@ -1,8 +1,10 @@
 body {
   background-color: #faf9f6;
 }
-.page {
+.game {
   margin: auto;
+  display: flex;
+  flex-direction: column;
 }
 
 .material-symbols-outlined {
@@ -14,6 +16,13 @@ body {
   grid-template-columns: fit-content(25%) fit-content(25%);
   justify-content: center;
   gap: 1rem;
+}
+
+.game-controls,
+#game-score {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
 }
 
 .game-container div {
