@@ -1,10 +1,19 @@
 body {
   background-color: #faf9f6;
+  font-family: "Open Sans", sans-serif;
 }
+
 .game {
   margin: auto;
   display: flex;
   flex-direction: column;
+}
+
+.title {
+  margin: auto;
+  padding: 1rem;
+  color: #3b3b3b;
+  font-family: "Open Sans", sans-serif;
 }
 
 .material-symbols-outlined {
@@ -19,10 +28,28 @@ body {
 }
 
 .game-controls,
-#game-score {
+#game-message,
+.scores,
+.labels {
   display: flex;
   justify-content: center;
-  padding: 1rem;
+}
+
+.game-controls {
+  .game-control-buttons button {
+    margin: 0.25rem;
+    width: 10rem;
+    height: 2.5rem;
+    border-radius: 10px;
+  }
+  margin: 1rem;
+}
+
+.scores span,
+.labels span {
+  width: 10rem;
+  margin: 0.5rem;
+  text-align: center;
 }
 
 .game-container div {

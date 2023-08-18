@@ -93,9 +93,16 @@ const showAnswers = async (answerArray) => {
   }
 };
 
+const clearGame = () => {
+  document.getElementById("game-message").innerHTML = "";
+  score = 0;
+  document.getElementById("game-score").innerHTML = 0;
+  answers = [];
+};
+
 async function gameLoop() {
-  document.getElementById("play").removeEventListener("click", gameLoop);
-  let i = 0;
+  clearGame();
+  document.getElementById("play").disabled = true;
   mainLoop: while (true) {
     answers = pushNextAnswer(answers);
     console.log(answers);
@@ -103,15 +110,19 @@ async function gameLoop() {
     for (let answer of answers) {
       const isSelectionCorrect = await waitForSelection(answer);
       if (isSelectionCorrect) {
-        console.log("correct guess... next");
         continue;
       } else {
+        document.getElementById("play").disabled = false;
+        document.getElementById("game-message").innerHTML =
+          '<h3 id="game-message-end">Game Over!</h3>';
         break mainLoop;
       }
     }
     document.getElementById("game-score").innerHTML = ++score;
   }
-  // document.addEventListener("click", gameLoop);
 }
 
+document.getElementById("game-message").innerHTML =
+  '<h3 id="game-message-start">Press Play to Begin!</h3>';
 document.getElementById("play").addEventListener("click", gameLoop);
+document.getElementById("restart").addEventListener("click", gameLoop);
